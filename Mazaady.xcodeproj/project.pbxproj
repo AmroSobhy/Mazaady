@@ -8,14 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		3527D4162D929670006912C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3527D4152D929670006912C2 /* AppDelegate.swift */; };
-		3527D4182D929670006912C2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3527D4172D929670006912C2 /* SceneDelegate.swift */; };
-		3527D41A2D929670006912C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3527D4192D929670006912C2 /* ViewController.swift */; };
+		3527D41A2D929670006912C2 /* DynamicFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3527D4192D929670006912C2 /* DynamicFormViewController.swift */; };
 		3527D41D2D929670006912C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3527D41B2D929670006912C2 /* Main.storyboard */; };
 		3527D41F2D929673006912C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3527D41E2D929673006912C2 /* Assets.xcassets */; };
 		3527D4222D929673006912C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3527D4202D929673006912C2 /* LaunchScreen.storyboard */; };
 		3527D42D2D929674006912C2 /* MazaadyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3527D42C2D929674006912C2 /* MazaadyTests.swift */; };
 		3527D4372D929674006912C2 /* MazaadyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3527D4362D929674006912C2 /* MazaadyUITests.swift */; };
 		3527D4392D929674006912C2 /* MazaadyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3527D4382D929674006912C2 /* MazaadyUITestsLaunchTests.swift */; };
+		3527D4472D92A1FD006912C2 /* NetWorkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3527D4462D92A1FD006912C2 /* NetWorkManager.swift */; };
+		3527D4492D92A431006912C2 /* DynamicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3527D4482D92A431006912C2 /* DynamicModel.swift */; };
+		D9BA98A1AF9BA865B7003E71 /* Pods_Mazaady.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 427C0FA413D3F07937D4F96C /* Pods_Mazaady.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,10 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1373888B88B3D757C14E46DA /* Pods-Mazaady.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mazaady.debug.xcconfig"; path = "Target Support Files/Pods-Mazaady/Pods-Mazaady.debug.xcconfig"; sourceTree = "<group>"; };
 		3527D4122D929670006912C2 /* Mazaady.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mazaady.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3527D4152D929670006912C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3527D4172D929670006912C2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3527D4192D929670006912C2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3527D4192D929670006912C2 /* DynamicFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicFormViewController.swift; sourceTree = "<group>"; };
 		3527D41C2D929670006912C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3527D41E2D929673006912C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3527D4212D929673006912C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +51,10 @@
 		3527D4322D929674006912C2 /* MazaadyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MazaadyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3527D4362D929674006912C2 /* MazaadyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazaadyUITests.swift; sourceTree = "<group>"; };
 		3527D4382D929674006912C2 /* MazaadyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazaadyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3527D4462D92A1FD006912C2 /* NetWorkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkManager.swift; sourceTree = "<group>"; };
+		3527D4482D92A431006912C2 /* DynamicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicModel.swift; sourceTree = "<group>"; };
+		427C0FA413D3F07937D4F96C /* Pods_Mazaady.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mazaady.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3F68AC56DAD4DCB858985DF /* Pods-Mazaady.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mazaady.release.xcconfig"; path = "Target Support Files/Pods-Mazaady/Pods-Mazaady.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9BA98A1AF9BA865B7003E71 /* Pods_Mazaady.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +83,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32137063B7EAC27FA1BD1287 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				427C0FA413D3F07937D4F96C /* Pods_Mazaady.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3527D4092D929670006912C2 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +98,8 @@
 				3527D42B2D929674006912C2 /* MazaadyTests */,
 				3527D4352D929674006912C2 /* MazaadyUITests */,
 				3527D4132D929670006912C2 /* Products */,
+				C1007761150DECED61B7224F /* Pods */,
+				32137063B7EAC27FA1BD1287 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,8 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				3527D4152D929670006912C2 /* AppDelegate.swift */,
-				3527D4172D929670006912C2 /* SceneDelegate.swift */,
-				3527D4192D929670006912C2 /* ViewController.swift */,
+				3527D4452D92A1B0006912C2 /* DynamicForm */,
 				3527D41B2D929670006912C2 /* Main.storyboard */,
 				3527D41E2D929673006912C2 /* Assets.xcassets */,
 				3527D4202D929673006912C2 /* LaunchScreen.storyboard */,
@@ -127,6 +143,25 @@
 			path = MazaadyUITests;
 			sourceTree = "<group>";
 		};
+		3527D4452D92A1B0006912C2 /* DynamicForm */ = {
+			isa = PBXGroup;
+			children = (
+				3527D4192D929670006912C2 /* DynamicFormViewController.swift */,
+				3527D4462D92A1FD006912C2 /* NetWorkManager.swift */,
+				3527D4482D92A431006912C2 /* DynamicModel.swift */,
+			);
+			path = DynamicForm;
+			sourceTree = "<group>";
+		};
+		C1007761150DECED61B7224F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1373888B88B3D757C14E46DA /* Pods-Mazaady.debug.xcconfig */,
+				B3F68AC56DAD4DCB858985DF /* Pods-Mazaady.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,9 +169,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3527D43C2D929674006912C2 /* Build configuration list for PBXNativeTarget "Mazaady" */;
 			buildPhases = (
+				13122DE3F70CE78736142EBD /* [CP] Check Pods Manifest.lock */,
 				3527D40E2D929670006912C2 /* Sources */,
 				3527D40F2D929670006912C2 /* Frameworks */,
 				3527D4102D929670006912C2 /* Resources */,
+				D68387880177992E360994D8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -253,14 +290,57 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		13122DE3F70CE78736142EBD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mazaady-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D68387880177992E360994D8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mazaady/Pods-Mazaady-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mazaady/Pods-Mazaady-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mazaady/Pods-Mazaady-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3527D40E2D929670006912C2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3527D41A2D929670006912C2 /* ViewController.swift in Sources */,
+				3527D41A2D929670006912C2 /* DynamicFormViewController.swift in Sources */,
 				3527D4162D929670006912C2 /* AppDelegate.swift in Sources */,
-				3527D4182D929670006912C2 /* SceneDelegate.swift in Sources */,
+				3527D4472D92A1FD006912C2 /* NetWorkManager.swift in Sources */,
+				3527D4492D92A431006912C2 /* DynamicModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,12 +517,14 @@
 		};
 		3527D43D2D929674006912C2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1373888B88B3D757C14E46DA /* Pods-Mazaady.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GT8W5896L6;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Mazaady/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -450,6 +532,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -465,12 +548,14 @@
 		};
 		3527D43E2D929674006912C2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3F68AC56DAD4DCB858985DF /* Pods-Mazaady.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GT8W5896L6;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Mazaady/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -478,6 +563,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
