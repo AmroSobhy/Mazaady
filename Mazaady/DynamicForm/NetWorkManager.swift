@@ -11,13 +11,27 @@ import Alamofire
 
 class NetworkManager {
 
-    
+    static func setHeaders(request: inout URLRequest) {
+        request.setValue("en", forHTTPHeaderField: "content-language")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.setValue("Tg$LXgp7uK!D@aAj^aT3TmWY9a9u#qh5g&xgEETJ", forHTTPHeaderField: "private-key")
+        request.setValue("Postman", forHTTPHeaderField: "platform")
+        request.setValue("AED", forHTTPHeaderField: "currency")
+    }
+
    static func getMainCategory(urlString: String,complete: @escaping (ResponseData?)->()) {
 //       let url = NSURL(string: urlString)
 //       var request = URLRequest(url: url! as URL)
        // 2 - create request
-       
-       Alamofire.request(urlString, method: .get, headers: [:]).responseData { response in
+       let headers: HTTPHeaders = [
+           "content-language": "en",
+           "Accept": "application/json",
+           "private-key": "Tg$LXgp7uK!D@aAj^aT3TmWY9a9u#qh5g&xgEETJ",
+           "platform": "Postman",
+           "currency": "AED"
+       ]
+
+       Alamofire.request(urlString, method: .get, headers: headers).responseData { response in
                // 3 - HTTP response handle
 
                print(" result",response)
@@ -62,55 +76,53 @@ class NetworkManager {
 
 
     static func getsubCategory(urlString: String,complete: @escaping (ResponseDataProperty?)->()) {
-        // 2. Create a URL object.
-        guard let url = URL(string: urlString) else {
-            print("Error: Invalid URL")
-            return
-        }
+        
+        if let url = URL(string: urlString) {
+            var request = URLRequest(url: url)
 
-        // 3. Create a URLSession.
-        let session = URLSession.shared
+            // Optional: Set the HTTP method (e.g., "GET", "POST", "PUT", "DELETE")
+            request.httpMethod = "GET" // or "POST", etc.
 
-        // 4. Create the data task.
-        let task = session.dataTask(with: url) { (data, response, error) in
-            // This closure is called on a background thread.
+            setHeaders(request: &request) // Pass the request as an inout parameter.
 
-            // 5. Handle errors.
-            if let error = error {
-                print("Error: \(error.localizedDescription)")
-                return
-            }
+            // Example of a URLSession data task:
 
-            // 6. Handle the HTTP response.
-            if let httpResponse = response as? HTTPURLResponse {
-                print("Status code: \(httpResponse.statusCode)")
-                guard (200...299).contains(httpResponse.statusCode) else {
-                    print("Error: Invalid status code")
+            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                if let error = error {
+                    print("Error: \(error)")
                     return
                 }
-            }
 
-            // 7. Handle the data and decode it.
-            if let data = data {
-                do {
-                    // 8. Decode the JSON data into a ResponseData object.
-                    let decoder = JSONDecoder()
-                    let responseData = try decoder.decode(ResponseDataProperty.self, from: data)
+                guard let httpResponse = response as? HTTPURLResponse,
+                      (200...299).contains(httpResponse.statusCode) else {
+                    print("Invalid response")
+                    return
+                }
 
-                    // 9. Print the decoded data.
-                    print("Message: \(responseData.message)")
-                    print("Properties:")
-                    complete(responseData)
+                // 7. Handle the data and decode it.
+                if let data = data {
+                    do {
+                        // 8. Decode the JSON data into a ResponseData object.
+                        let decoder = JSONDecoder()
+                        let responseData = try decoder.decode(ResponseDataProperty.self, from: data)
 
-                } catch {
-                    // Handle any errors that occur during JSON decoding.
-                    print("Error decoding JSON: \(error.localizedDescription)")
+                        // 9. Print the decoded data.
+                        print("Message: \(responseData)")
+                        complete(responseData)
+
+                    } catch {
+                        // Handle any errors that occur during JSON decoding.
+                        print("Error decoding JSON: \(error.localizedDescription)")
+                    }
                 }
             }
-        }
 
-        // 10. Start the task.
-        task.resume()
+            task.resume()
+        } else {
+            print("Invalid URL")
+        }
+        
+
     }
 
 

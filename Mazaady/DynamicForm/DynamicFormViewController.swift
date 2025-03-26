@@ -58,11 +58,11 @@ class DynamicFormViewController: UIViewController, UITableViewDataSource, UITabl
             subcategoryDropdown.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             subcategoryDropdown.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
 
-            submitButton.topAnchor.constraint(equalTo: subcategoryDropdown.bottomAnchor, constant: 300),
+            submitButton.topAnchor.constraint(equalTo: subcategoryDropdown.bottomAnchor, constant: 20),
             submitButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             submitButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
 
-            tableView.topAnchor.constraint(equalTo: subcategoryDropdown.bottomAnchor, constant: 100),
+            tableView.topAnchor.constraint(equalTo: submitButton.bottomAnchor, constant: 20),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
@@ -231,13 +231,23 @@ class DynamicFormViewController: UIViewController, UITableViewDataSource, UITabl
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView.tag == 0 {
-            return mainCategories.count
+            if mainCategories.count > 0 {
+                return mainCategories.count
+            }
         } else if pickerView.tag == 1 {
-            return subcategories.count
+            if subcategories.count > 0 {
+                
+                return subcategories.count
+            }
         } else {
-            return properties.count + 1 // +1 for "Other"
+            if properties.count > 0 {
+                
+                return properties.count + 1 // +1 for "Other"
+            }
+
             
         }
+        return 0
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
