@@ -3,7 +3,7 @@ import UIKit
 
 
 class DynamicFormViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
-
+    //MARK: outlets
     private let mainCategoryDropdown = UITextField()
     private let subcategoryDropdown = UITextField()
     private let submitButton = UIButton(type: .system)
@@ -16,15 +16,17 @@ class DynamicFormViewController: UIViewController, UITableViewDataSource, UITabl
     private var properties: [Option] = []
     private var selectedMainCategory: Category?
     private var selectedSubcategory: Property?
-
+    
+    //MARK: views
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
 
         setupUI()
-fetchData()
+        fetchData()
     }
 
+    //MARK: functions
     private func setupUI() {
         mainCategoryDropdown.placeholder = "Select Main Category"
         mainCategoryDropdown.borderStyle = .roundedRect
@@ -101,7 +103,7 @@ fetchData()
         // Replace with your actual data fetching logic
         // Example usage:
 
-        let urlString = "https://stagingapi.mazaady.com/api/v1/all-categories?platform=ios" // This URL returns a JSON object representing a todo item.
+        let urlString = "https://stagingapi.mazaady.com/api/v1/all-categories/web" // This URL returns a JSON object representing a todo item.
         NetworkManager.getMainCategory(urlString: urlString) { responseData in
             for category in responseData!.data.categories {
                 self.mainCategories.append(category)
@@ -127,20 +129,8 @@ fetchData()
             }
         })
 
-        
-        
-        
-        
-//        NetworkManager.getsubCategory(urlString: urlString, complete: { responseData in
-//            for property in responseData!.data {
-//                for category in property {
-//                    self.subcategories.append(category)
-//
-//                }
-//            }
-//        }
-    
     }
+
     @objc private func submitForm() {
         tableView.reloadData()
     }
@@ -223,6 +213,8 @@ fetchData()
             
         }
     }
+
+    //MARK: pickerview
 
     private func createPropertyPickerView(property: Option, textField: UITextField) -> UIPickerView {
         let pickerView = UIPickerView()
@@ -355,6 +347,8 @@ fetchData()
         }
         return ids
     }
+
+    //MARK: tableView
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return selectedValues.count
